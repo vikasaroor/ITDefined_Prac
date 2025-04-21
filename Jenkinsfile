@@ -8,11 +8,13 @@ stages{
           checkout scmGit(branches: [[name: '*/main'], [name: '*/test']],
             extensions: [], 
             userRemoteConfigs: [[url: 'https://github.com/vikasaroor/ITDefined_Prac.git']])
+            sh 'git branch -a'
         }
     } 
     stage('Second Stgae'){
         steps{
-            echo 'Hello In Second'
+            echo 'Hello In Second' 
+
         }
     } 
 

@@ -3,7 +3,7 @@ pipeline{
 agent any 
 
 stages{
-    stage('First Stgae'){
+    stage('First Checkout'){
         steps{
           checkout scmGit(branches: [[name: '*/main'], [name: '*/test']],
             extensions: [], 

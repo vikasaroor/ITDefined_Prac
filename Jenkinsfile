@@ -5,7 +5,7 @@ agent any
 stages{
     stage('First Checkout'){
         steps{
-          checkout scmGit(branches: [[name: '*/Test'], [name: '*/feature1']],
+          checkout scmGit(branches: [[name: '*/feature1']],
             extensions: [], 
             userRemoteConfigs: [[url: 'https://github.com/vikasaroor/ITDefined_Prac.git']])
             sh 'git branch -a'

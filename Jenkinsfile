@@ -4,6 +4,10 @@ agent {
     label 'testSlave && sseNode' 
 }
 
+options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
+}
+
 stages{
     stage('First Checkout'){
         steps{

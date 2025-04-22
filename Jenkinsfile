@@ -17,11 +17,14 @@ stages{
             userRemoteConfigs: [[url: 'https://github.com/vikasaroor/ITDefined_Prac.git']])
             sh 'git branch -a'
             sh 'git branch '
+            sh 'hostname -i'
+
         }
     } 
     stage('Second Stgae'){
         steps{
             echo 'Hello In Second' 
+            sh 'hostname -i'
 
         }
     } 

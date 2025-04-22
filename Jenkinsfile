@@ -1,8 +1,6 @@
 pipeline{
 
-agent {
-    label 'testSlave || sseNode' 
-}
+agent any
 
 options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
@@ -10,6 +8,9 @@ options {
 
 stages{
     stage('First Checkout'){
+        agent {
+             label 'testSlave || sseNode' 
+        }       
         steps{
           checkout scmGit(branches: [[name: '*/feature1']],
             extensions: [], 

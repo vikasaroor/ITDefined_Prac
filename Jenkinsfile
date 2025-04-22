@@ -9,6 +9,7 @@ stages{
             extensions: [], 
             userRemoteConfigs: [[url: 'https://github.com/vikasaroor/ITDefined_Prac.git']])
             sh 'git branch -a'
+            sh 'git branch '
         }
     } 
     stage('Second Stgae'){

@@ -4,6 +4,7 @@ agent any
 
 options { 
     buildDiscarder logRotator(numToKeepStr: '5')
+    timeout (time: 5, unit: 'HOURS')
 }
 
 parameters {

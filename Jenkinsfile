@@ -20,12 +20,6 @@ stages{
 
         }
     } 
-    stage('Second Stgae'){
-        steps{
-            echo 'Hello In Second' 
-
-        }
-    } 
 
 }
 }

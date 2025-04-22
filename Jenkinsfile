@@ -1,7 +1,7 @@
 pipeline{
 
 agent {
-    label 'testSlave && sseNode' 
+    label 'testSlave || sseNode' 
 }
 
 options {

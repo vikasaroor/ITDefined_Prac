@@ -1,6 +1,8 @@
 pipeline{
 
-agent any 
+agent {
+    label 'testSlave' 
+}
 
 stages{
     stage('First Checkout'){
@@ -18,7 +20,12 @@ stages{
 
         }
     } 
+    stage('Second Stgae'){
+        steps{
+            echo 'Hello In Second' 
 
+        }
+    } 
 
 }
 }

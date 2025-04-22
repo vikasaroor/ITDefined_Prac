@@ -23,7 +23,8 @@ stages{
             sh 'git branch -a'
             sh 'git branch '
             sh 'hostname -i'
-
+            echo ${params.enviroment}
+            echo ${params.name}
         }
     } 
     stage('Second Stgae'){

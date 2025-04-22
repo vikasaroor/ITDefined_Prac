@@ -14,9 +14,7 @@ parameters {
 
 stages{
     stage('First Checkout'){
-        agent {
-             label 'testSlave || sseNode' 
-        }       
+        
         steps{
           checkout scmGit(branches: [[name: '*/feature1']],
             extensions: [], 

@@ -2,9 +2,15 @@ pipeline{
 
 agent any
 
-options {
-  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
+options { 
+    buildDiscarder logRotator(numToKeepStr: '5')
 }
+
+parameters {
+  booleanParam (defaultValue: false, description: 'Add to get', name: 'Test')
+  choice (name: 'enviroment',choices:['prod','prepod','test'],description: 'Add ur Req value')
+}
+
 
 stages{
     stage('First Checkout'){

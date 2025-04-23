@@ -16,9 +16,12 @@ stages{
     }
 
     stage('second'){
+        steps{
         when{
             expression {
-                currentBuild.result == 'SUCCESS'}
+                currentBuild.result == 'SUCCESS'
+                 }
+            }
         }
     }
 }

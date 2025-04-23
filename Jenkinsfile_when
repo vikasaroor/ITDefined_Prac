@@ -7,6 +7,12 @@ options{
         timeout (10)
 }
 
+triggers{
+    pollscm('*/2 * * * *')
+    githubpush()
+    
+}
+
 parameters {     
     choice name:'Branch', description:'Select required Branch',choices:['main','master','Preprod','testing']
     string name: 'environment' , description: 'add req String, build on  BUILD value'
@@ -24,7 +30,7 @@ stage('CheckoutCode'){
 stage('Stage2'){
 
     when {
-       changeset 'README.md'
+       triggeredBy 'README.md'
        
     }
 

@@ -23,9 +23,9 @@ stage('CheckoutCode'){
 stage('Stage2'){
 
     when {
-        not { 
+         
              branch 'Prepod' 
-       } 
+       
      
     }
     steps{ 

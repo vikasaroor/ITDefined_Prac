@@ -14,7 +14,7 @@ triggers{
 }
 
 parameters {     
-    choice name:'Branch', description:'Select required Branch',choices:['main','master','Preprod','testing']
+    choice name:'Branch', description:'Select required Branch',choices:['main','master','Preprod','testing'],defaultValue: 'main'
     string name: 'environment' , description: 'add req String, build on  BUILD value'
     booleanParam: name: 'BUILD', defaultValue: false
 }

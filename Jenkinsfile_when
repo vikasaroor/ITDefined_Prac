@@ -19,7 +19,8 @@ stage('CheckoutCode'){
 stage('Stage2'){
     steps{
         sh '''echo Hello
-              git branch 
+              git remote -v
+              git branch -vv 
               hostname -i
               git branch -a '''
 }

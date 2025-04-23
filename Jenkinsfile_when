@@ -8,14 +8,15 @@ options{
 }
 
 triggers{
-    pollscm('*/2 * * * *')
-    githubpush()
+    pollSCM('*/2 * * * *')
+    githubPush()
     
 }
 
 parameters {     
     choice name:'Branch', description:'Select required Branch',choices:['main','master','Preprod','testing']
     string name: 'environment' , description: 'add req String, build on  BUILD value'
+    booleanParam: name: 'BUILD', defaultValue: false
 }
 
 stages {
@@ -29,10 +30,10 @@ stage('CheckoutCode'){
 
 stage('Stage2'){
 
-    when {
-       triggeredBy 'README.md'
+    // when {
+    //    triggeredBy 'README.md'
        
-    }
+    // }
 
     steps{ 
         sh '''echo Hello

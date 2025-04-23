@@ -1,0 +1,23 @@
+pipeline{
+
+agent any
+
+options{
+        buildDiscarder logRotator(numToKeepStr: '5')
+        timeout (10)
+} 
+
+stages{
+
+    stage('First'){
+      steps{
+        echo "Hello"
+      }
+    }
+
+    stage('second'){
+        when{
+            expression (currentBuild.)
+        }
+    }
+}

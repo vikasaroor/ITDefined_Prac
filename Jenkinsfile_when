@@ -24,7 +24,9 @@ stage('CheckoutCode'){
 stage('Stage2'){
 
     when {
-        expression { params.environment == 'BUILD' }
+        expression { 
+             return env.BUILD_NUMBER.toInteger() % 2 == 0
+        }
     }
 
     steps{ 

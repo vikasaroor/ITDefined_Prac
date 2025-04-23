@@ -24,7 +24,7 @@ stage('CheckoutCode'){
 stage('Stage2'){
 
     when {
-       change 'README.md'
+       changes 'README.md'
        
     }
 

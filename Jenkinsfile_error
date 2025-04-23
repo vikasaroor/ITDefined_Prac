@@ -17,7 +17,7 @@ stages{
 
     stage('second'){
         when{
-            expression (currentBuild.)
+            expression (currentBuild.result == 'SUCCESS')
         }
     }
 }

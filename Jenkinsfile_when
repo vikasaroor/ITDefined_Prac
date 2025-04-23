@@ -39,6 +39,9 @@ stage('Stage3'){
 
     steps{ 
         echo 'Testing continitity'
+        echo "Branch param: ${params.Branch}"
+        echo "BRANCH_NAME env: ${env.BRANCH_NAME}"
+    
 }
 }
 

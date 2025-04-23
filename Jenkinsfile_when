@@ -1,0 +1,32 @@
+pipeline{
+
+agent any
+
+options{
+        buildDiscarder logRotator(numToKeepStr: '5')
+    timeout (time: 5, unit: 'min')
+}
+
+stages {
+
+stage('CheckoutCode'){
+    steps{
+        git branch: 'main', credentialsId: '', url: 'https://github.com/vikasaroor/delete.git'
+    
+}
+}
+
+stage('Stage2'){
+    steps{
+        sh '''echo Hello
+              git branch 
+              hostname -i
+              git branch -a '''
+}
+}
+
+}
+}
+
+
+

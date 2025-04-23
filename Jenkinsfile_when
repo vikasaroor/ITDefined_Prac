@@ -15,7 +15,7 @@ stages {
 
 stage('CheckoutCode'){
     steps{
-        git branch: "${params.Branch}",  url: 'https://github.com/vikasaroor/delete.git'
+        git branch: params.Branch,  url: 'https://github.com/vikasaroor/delete.git'
     
 }
 }

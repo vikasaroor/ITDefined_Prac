@@ -23,7 +23,10 @@ stage('CheckoutCode'){
 stage('Stage2'){
 
     when {
-        branch 'Prepod'
+        not { 
+             branch 'Prepod' 
+       } 
+     
     }
     steps{ 
         sh '''echo Hello

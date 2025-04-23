@@ -15,7 +15,7 @@ stages {
 
 stage('CheckoutCode'){
     steps{
-        git branch: params.Branch,  url: 'https://github.com/vikasaroor/delete.git'
+        git branch: "${params.Branch}",  url: 'https://github.com/vikasaroor/delete.git'
     
 }
 }
@@ -23,11 +23,9 @@ stage('CheckoutCode'){
 stage('Stage2'){
 
     when {
-         
-             branch 'Prepod' 
-       
-     
+        expression { return params.Branch == 'Preprod' }
     }
+
     steps{ 
         sh '''echo Hello
               git remote -v

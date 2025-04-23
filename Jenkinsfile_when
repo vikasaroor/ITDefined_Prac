@@ -7,22 +7,38 @@ options{
     timeout (10)
 }
 
+parameters { 
+    choice name:'Branch', description:'Select required Branch',choices:['main','master','Preprod','testing']
+}
+
 stages {
 
 stage('CheckoutCode'){
     steps{
-        git branch: 'main', credentialsId: '', url: 'https://github.com/vikasaroor/delete.git'
+        git branch: "params.Branch", credentialsId: '', url: 'https://github.com/vikasaroor/delete.git'
     
 }
 }
 
 stage('Stage2'){
-    steps{
+
+    when {
+        branch 'Prepod'
+    }
+    steps{ 
         sh '''echo Hello
               git remote -v
-              git branch -vv 
-              hostname -i
+               
+              ls -l
               git branch -a '''
+}
+}
+
+
+stage('Stage3'){
+
+    steps{ 
+        echo 'Testing continitity'
 }
 }
 

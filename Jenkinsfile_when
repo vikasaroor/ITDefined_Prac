@@ -23,7 +23,7 @@ stage('CheckoutCode'){
 stage('Stage2'){
 
     when {
-        expression { return params.Branch == 'Preprod' }
+        expression { params.Branch == 'Preprod' }
     }
 
     steps{ 

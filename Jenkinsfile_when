@@ -24,9 +24,8 @@ stage('CheckoutCode'){
 stage('Stage2'){
 
     when {
-        expression { 
-             return env.BUILD_NUMBER.toInteger() % 2 == 0
-        }
+       change 'README.md'
+       
     }
 
     steps{ 

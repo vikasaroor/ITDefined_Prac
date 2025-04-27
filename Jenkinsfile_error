@@ -1,3 +1,5 @@
+boolean myTest = true
+
 pipeline{
 
 agent any
@@ -9,20 +11,44 @@ options{
 
 stages{
 
-    stage('First'){
+    stage('Initial'){
       steps{
-        echo "Hello"
+        echo 'Hello All' 
+  
       }
     }
 
-    stage('second'){
-        steps{
-        when{
-            expression {
-                currentBuild.result == 'SUCCESS'
-                 }
-            }
-        }
-    }
+    stage('SecondStage'){
+
+      when {
+        expression myTest == true
+      }
+      
+      steps{
+        echo 'Hello Second Stage' 
+        } 
+        post{
+        'SUCCESS' {
+        echo "WithIn stage"
+          }
 }
+      }
+    
+
+    stage('ThridStgae'){
+      steps{
+        echo 'Hello All' 
+        echo 'Hello Third Stage' 
+        } 
+      }
+      
+  }
+
+post{
+  always{
+    echo "hello"
+  }
+}
+
+
 }

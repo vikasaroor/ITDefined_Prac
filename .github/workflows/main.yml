@@ -1,17 +1,22 @@
-name: my workflow 
-
 on: 
- push: 
+  push: 
   
 jobs: 
-  my-taril-run:  
-    runs-on: ubuntu-latest 
-    steps: 
-      - name: checkout 
-        uses: actions/checkout@v4  
+    my-taril-run:  
+       runs-on: ubuntu-latest 
+       steps: 
+        - name: checkout 
+          uses: actions/checkout@v4  
         
-      - name: list 
-        run: ls -l 
+        - name: list 
+          run: ls -l 
+      
+jobs2: 
+   mysec
+    run-on: ubuntu-latest 
+    steps: 
+      - name: steps1 
+        run: echo ruuning job2 
       
       
   

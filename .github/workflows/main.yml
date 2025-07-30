@@ -1,3 +1,5 @@
+name: my workflow 
+
 on: 
   push: 
   
@@ -11,12 +13,8 @@ jobs:
         - name: list 
           run: ls -l 
       
-jobs2: 
-   mysec
-    run-on: ubuntu-latest 
-    steps: 
+    mysec:
+      run-on: ubuntu-latest 
+      steps: 
       - name: steps1 
         run: echo ruuning job2 
-      
-      
-  

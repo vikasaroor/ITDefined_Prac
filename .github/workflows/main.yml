@@ -1,0 +1,17 @@
+name: my workflow 
+
+on: 
+ push: 
+  
+jobs: 
+  my-taril-run:  
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: checkout 
+        with: actions/checkout@v4  
+        
+      - name: list 
+        run: ls -l 
+      
+      
+  
